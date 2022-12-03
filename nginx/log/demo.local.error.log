@@ -512,3 +512,242 @@ Stack trace:
   thrown in /var/www/php/index.php on line 9" while reading response header from upstream, client: 192.168.112.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://192.168.112.3:9010", host: "localhost", referrer: "http://localhost/index.php"
 2022/05/21 23:18:09 [error] 25#25: *16 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /var/www/php/index.php on line 7" while reading response header from upstream, client: 192.168.112.1, server: localhost, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://192.168.112.3:9010", host: "localhost"
 2022/05/21 23:18:40 [error] 25#25: *16 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /var/www/php/index.php on line 5" while reading response header from upstream, client: 192.168.112.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://192.168.112.3:9010", host: "localhost", referrer: "http://localhost/index.php"
+2022/07/02 23:06:09 [error] 25#25: *10 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 262144 bytes) in /var/www/php/index.php on line 5" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.3:9010", host: "localhost"
+2022/07/02 23:06:09 [error] 25#25: *10 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 262144 bytes) in /var/www/php/index.php on line 5" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.18.0.3:9010", host: "localhost", referrer: "http://localhost/index.php"
+2022/07/02 23:13:21 [error] 25#25: *22 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to undefined function dd() in /var/www/php/index.php:7
+Stack trace:
+#0 /var/www/php/index.php(5): move(1, 'A', 'B', 'C')
+#1 /var/www/php/index.php(10): move(2, 'A', 'B', 'C')
+#2 {main}
+  thrown in /var/www/php/index.php on line 7" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.3:9010", host: "localhost"
+2022/07/02 23:13:21 [error] 25#25: *22 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to undefined function dd() in /var/www/php/index.php:7
+Stack trace:
+#0 /var/www/php/index.php(5): move(1, 'A', 'B', 'C')
+#1 /var/www/php/index.php(10): move(2, 'A', 'B', 'C')
+#2 {main}
+  thrown in /var/www/php/index.php on line 7" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.18.0.3:9010", host: "localhost", referrer: "http://localhost/index.php"
+2022/11/27 02:30:13 [error] 24#24: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "Swoole\Client" not found in /var/www/php/swoole.php:30
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/swoole.php on line 30" while reading response header from upstream, client: 172.24.0.1, server: xyz.test, request: "GET /swoole.php HTTP/1.1", upstream: "fastcgi://172.24.0.2:9010", host: "xyz.test"
+2022/11/27 15:29:13 [error] 25#25: *5 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 3" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test"
+2022/11/27 15:29:14 [error] 25#25: *5 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 3" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:30:40 [error] 24#24: *10 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 3" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test"
+2022/11/27 15:30:40 [error] 24#24: *10 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 3" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:30:53 [error] 24#24: *10 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 3" while reading upstream, client: 172.23.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test"
+2022/11/27 15:30:53 [error] 24#24: *10 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 3" while reading upstream, client: 172.23.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:34:28 [error] 25#25: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test"
+2022/11/27 15:34:29 [error] 25#25: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:34:39 [error] 25#25: *15 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected end of file, expecting variable or "{" or "$" in /var/www/php/index.php on line 11" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test"
+2022/11/27 15:34:39 [error] 25#25: *15 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected end of file, expecting variable or "{" or "$" in /var/www/php/index.php on line 11" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:34:45 [error] 25#25: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test"
+2022/11/27 15:34:45 [error] 25#25: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:37:35 [error] 24#24: *23 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test"
+2022/11/27 15:37:35 [error] 24#24: *23 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:37:47 [error] 24#24: *23 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test"
+2022/11/27 15:37:47 [error] 24#24: *23 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.23.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.23.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:38:54 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test"
+2022/11/27 15:38:54 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:38:55 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test"
+2022/11/27 15:38:55 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:38:55 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test"
+2022/11/27 15:38:55 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:38:55 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test"
+2022/11/27 15:38:55 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:38:56 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test"
+2022/11/27 15:38:56 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:38:56 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test"
+2022/11/27 15:38:56 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:38:56 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test"
+2022/11/27 15:38:56 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 15:39:39 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test"
+2022/11/27 15:39:40 [error] 23#23: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 2" while reading response header from upstream, client: 172.25.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.25.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 16:31:38 [error] 24#24: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /var/www/php/index.php on line 3PHP message: PHP Fatal error:  Uncaught Error: mysqli object is already closed in /var/www/php/index.php:4
+Stack trace:
+#0 /var/www/php/index.php(4): mysqli->query('select * from u...')
+#1 {main}
+  thrown in /var/www/php/index.php on line 4" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test"
+2022/11/27 16:31:38 [error] 24#24: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /var/www/php/index.php on line 3PHP message: PHP Fatal error:  Uncaught Error: mysqli object is already closed in /var/www/php/index.php:4
+Stack trace:
+#0 /var/www/php/index.php(4): mysqli->query('select * from u...')
+#1 {main}
+  thrown in /var/www/php/index.php on line 4" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 16:32:27 [error] 24#24: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /var/www/php/index.php on line 3PHP message: PHP Fatal error:  Uncaught Error: mysqli object is already closed in /var/www/php/index.php:4
+Stack trace:
+#0 /var/www/php/index.php(4): mysqli->query('select * from u...')
+#1 {main}
+  thrown in /var/www/php/index.php on line 4" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test"
+2022/11/27 16:32:28 [error] 24#24: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /var/www/php/index.php on line 3PHP message: PHP Fatal error:  Uncaught Error: mysqli object is already closed in /var/www/php/index.php:4
+Stack trace:
+#0 /var/www/php/index.php(4): mysqli->query('select * from u...')
+#1 {main}
+  thrown in /var/www/php/index.php on line 4" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 16:32:28 [error] 24#24: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /var/www/php/index.php on line 3PHP message: PHP Fatal error:  Uncaught Error: mysqli object is already closed in /var/www/php/index.php:4
+Stack trace:
+#0 /var/www/php/index.php(4): mysqli->query('select * from u...')
+#1 {main}
+  thrown in /var/www/php/index.php on line 4" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test"
+2022/11/27 16:32:28 [error] 24#24: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /var/www/php/index.php on line 3PHP message: PHP Fatal error:  Uncaught Error: mysqli object is already closed in /var/www/php/index.php:4
+Stack trace:
+#0 /var/www/php/index.php(4): mysqli->query('select * from u...')
+#1 {main}
+  thrown in /var/www/php/index.php on line 4" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 16:32:28 [error] 24#24: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /var/www/php/index.php on line 3PHP message: PHP Fatal error:  Uncaught Error: mysqli object is already closed in /var/www/php/index.php:4
+Stack trace:
+#0 /var/www/php/index.php(4): mysqli->query('select * from u...')
+#1 {main}
+  thrown in /var/www/php/index.php on line 4" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test"
+2022/11/27 16:32:28 [error] 24#24: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /var/www/php/index.php on line 3PHP message: PHP Fatal error:  Uncaught Error: mysqli object is already closed in /var/www/php/index.php:4
+Stack trace:
+#0 /var/www/php/index.php(4): mysqli->query('select * from u...')
+#1 {main}
+  thrown in /var/www/php/index.php on line 4" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 16:33:30 [error] 24#24: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /var/www/php/index.php on line 3PHP message: PHP Fatal error:  Uncaught Error: mysqli object is already closed in /var/www/php/index.php:4
+Stack trace:
+#0 /var/www/php/index.php(4): mysqli->query('select * from u...')
+#1 {main}
+  thrown in /var/www/php/index.php on line 4" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test"
+2022/11/27 16:33:31 [error] 24#24: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /var/www/php/index.php on line 3PHP message: PHP Fatal error:  Uncaught Error: mysqli object is already closed in /var/www/php/index.php:4
+Stack trace:
+#0 /var/www/php/index.php(4): mysqli->query('select * from u...')
+#1 {main}
+  thrown in /var/www/php/index.php on line 4" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 16:34:56 [error] 25#25: *18 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /var/www/php/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 5" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test"
+2022/11/27 16:34:56 [error] 25#25: *18 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /var/www/php/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 5" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 16:35:13 [error] 25#25: *18 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /var/www/php/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 5" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test"
+2022/11/27 16:35:13 [error] 25#25: *18 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /var/www/php/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 5" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 16:35:33 [error] 25#25: *18 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /var/www/php/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 5" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test"
+2022/11/27 16:35:33 [error] 25#25: *18 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /var/www/php/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 5" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/27 16:37:08 [error] 24#24: *29 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected token "->" in /var/www/php/index.php on line 5" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test"
+2022/11/27 16:37:08 [error] 24#24: *29 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected token "->" in /var/www/php/index.php on line 5" while reading response header from upstream, client: 172.30.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.30.0.4:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/11/30 01:57:00 [error] 25#25: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/php/index.php:2) in /var/www/php/index.php on line 6" while reading upstream, client: 172.18.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.18.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.html"
+2022/11/30 01:57:01 [error] 24#24: *2 FastCGI sent in stderr: "PHP message: PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/php/index.php:2) in /var/www/php/index.php on line 6" while reading upstream, client: 172.18.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.html"
+2022/11/30 01:57:01 [error] 24#24: *2 FastCGI sent in stderr: "PHP message: PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/php/index.php:2) in /var/www/php/index.php on line 6" while reading upstream, client: 172.18.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.html"
+2022/11/30 01:57:01 [error] 25#25: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/php/index.php:2) in /var/www/php/index.php on line 6" while reading upstream, client: 172.18.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.18.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.html"
+2022/11/30 01:57:02 [error] 24#24: *2 FastCGI sent in stderr: "PHP message: PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/php/index.php:2) in /var/www/php/index.php on line 6" while reading upstream, client: 172.18.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.18.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.html"
+2022/11/30 01:57:02 [error] 25#25: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/php/index.php:2) in /var/www/php/index.php on line 6" while reading upstream, client: 172.18.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.5:9010", host: "xyz.test", referrer: "http://xyz.test/index.html"
+2022/12/01 02:40:23 [error] 25#25: *42 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 3" while reading response header from upstream, client: 172.18.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.4:9010", host: "xyz.test"
+2022/12/01 02:40:23 [error] 25#25: *42 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 3" while reading response header from upstream, client: 172.18.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.18.0.4:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/12/01 03:37:56 [error] 24#24: *101 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 3" while reading response header from upstream, client: 172.18.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.4:9010", host: "xyz.test"
+2022/12/01 03:37:56 [error] 24#24: *101 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /var/www/php/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /var/www/php/index.php on line 3" while reading response header from upstream, client: 172.18.0.1, server: xyz.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.18.0.4:9010", host: "xyz.test", referrer: "http://xyz.test/index.php"
+2022/12/01 03:42:36 [error] 25#25: *127 connect() failed (113: Host is unreachable) while connecting to upstream, client: 172.18.0.1, server: xyz.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.4:9010", host: "xyz.test"

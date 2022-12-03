@@ -1,84 +1,58 @@
-// //
-// const one = () => {
+// function displayresult() {
+//     console.log('Hi hi');
+// }
+//
+// function abc(a, b, callback) {
+//     callback();
+//
+// }
+//
+// abc(4, 5, displayresult);
+// function sleep(milliseconds) {
+//     const date = Date.now();
+//     let currentDate = null;
+//     do {
+//         currentDate = Date.now();
+//     } while (currentDate - date < milliseconds);
+// }
+//
+//  function  randomReadFile (x) {
 //     return new Promise((resolve, reject) => {
-//         console.log('as');
-//
+//         if (x == 2) {
+//             resolve("yes");
+//         } else {
+//             reject("no")
+//         }
 //     });
 //
 // }
-// const two = () => {
-//     return new Promise(resolve => {
-//         console.log("Hello");
-//         sleep(5000);
-//         console.log("World!");
-//         resolve("game")
-//         console.log('two')
-//     });
-//
+
+
+
+
+
+// async function test(){
+//     try {
+//         let random = await randomReadFile(2);
+//         console.log(random);
+//     } catch (error) {
+//         console.log(error);
+//     }
 // }
-// const three = () => {
-//     return new Promise(resolve => {
-//         resolve();
-//         console.log('Thress')
-//     });
-// }
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-        currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-}
+// test();
 
 
-// one().then((zz) => {
-//     console.log(zz);
-//     return two()
-// }).then(() => {
-//     return three()
-// }).then(() => {
-//     console.log("We did them all")
-// })
 
-// one().then(function (value){
+// console.log('earlier');
+// random.then((value) => {
 //     console.log(value);
+// }, (error) => {
+//     console.log(error);
 // })
-//  async function tc(){
-//   let response = await one();
-//   console.log(response);
-//
-//  }
-//  tc();
-// console.log('not waiting');
 
-// function hello(){
-//     console.log('hello');
-// }
-// async function getFile() {
-//     let myPromise = new Promise(function(resolve) {
-//         let req = new XMLHttpRequest();
-//         req.open('GET', "index.php");
-//         req.onload = function() {
-//             if (req.status == 200) {
-//                 resolve(req.response);
-//             } else {
-//                 resolve("File not Found");
-//             }
-//         };
-//         req.send();
-//     });
-//     document.getElementById("demo").innerHTML = await myPromise;
-//
-// }
-//
-// getFile();
-
-function hello() {
-    console.log('hello');
-}
 
 async function getFile() {
-    let myPromise = new Promise(function (resolve,reject) {
+    let myPromise = new Promise(function (resolve, reject) {
         let req = new XMLHttpRequest();
         req.open('GET', "index.php");
         req.onload = function () {
@@ -87,24 +61,24 @@ async function getFile() {
                 // sleep(5000);
                 resolve(req.getAllResponseHeaders());
             } else {
-                reject("File not Found");
+                reject("File not Foundjjj");
             }
         };
         req.send();
     });
-    try{
+
+    try {
         var result = await myPromise;
         document.getElementById("demo").innerText = result;
-
-    }catch (error){
-
+    } catch (error) {
         document.getElementById("demo").innerText = error;
-
     }
-
 }
+
+
+
 getFile();
-console.log('getting file')
+// console.log('getting file')
 
 
 

@@ -13,22 +13,61 @@ services:
       - '5672:5672'
       - '15672:15672'
 
-  swoole:
-    container_name: swoole
-    tty: true
-    restart: unless-stopped
-    working_dir: /app
+  #  swoole:
+  #    container_name: swoole
+  #    tty: true
+  #    restart: unless-stopped
+  #    working_dir: /app
+  #    build:
+  #      context: ./swoole
+  #      dockerfile: Dockerfile
+  #    ports:
+  #      - "8101:8101"
+  #    volumes:
+  #      - ./swoole:/app/
+  #    networks:
+  #      - app-network
+
+  posts:
     build:
-      context: ./swoole
+      context: ./posts
       dockerfile: Dockerfile
+    container_name: posts
     ports:
-      - "8101:8101"
+      - '6001:7002'
     volumes:
-      - ./swoole:/app/
+      - ./posts:/app
+
+  comments:
+    build:
+      context: ./comments
+      dockerfile: Dockerfile
+    container_name: comments
+    ports:
+      - '6002:7002'
+    volumes:
+      - ./comments:/app
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     networks:
       - app-network
+    volumes:
+      - './frontend:/usr/src/app'
+      - '/app/node_modules'
+    ports:
+      - 3000:3000
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    command: npm start
 
-  php1:
+
+
+  php:
     build:
       context: ./
       dockerfile: Dockerfile
@@ -44,8 +83,29 @@ services:
       - app-network
 
   ### Nginx Server Container ##################################
+  mysql:
+    image: mysql/mysql-server:latest-aarch64
+    container_name: mysql
+    tty: true
+    expose:
+      - "3306"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 12345678
+      MYSQL_ROOT_HOST: '%'
+      TZ: Asia/Shanghai
+    volumes:
+      - mysqldata:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+    restart: always
+    networks:
+      - app-network
 
-  nginx1:
+  nginx:
     image: nginx:stable-alpine
     container_name: nginx
     depends_on:
