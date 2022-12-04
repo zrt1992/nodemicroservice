@@ -3,15 +3,15 @@ version: "3.3"
 services:
   ### PHP-FPM Container #######################################
 
-  rabbitmq3:
-    container_name: "rabbitmq"
-    image: rabbitmq:3.8-management-alpine
-    environment:
-      - RABBITMQ_DEFAULT_USER=myuser
-      - RABBITMQ_DEFAULT_PASS=mypassword
-    ports:
-      - '5672:5672'
-      - '15672:15672'
+  #  rabbitmq3:
+  #    container_name: "rabbitmq"
+  #    image: rabbitmq:3.8-management-alpine
+  #    environment:
+  #      - RABBITMQ_DEFAULT_USER=myuser
+  #      - RABBITMQ_DEFAULT_PASS=mypassword
+  #    ports:
+  #      - '5672:5672'
+  #      - '15672:15672'
 
   #  swoole:
   #    container_name: swoole
@@ -37,6 +37,8 @@ services:
       - '6001:7002'
     volumes:
       - ./posts:/app
+    networks:
+      - app-network
 
   comments:
     build:
@@ -47,6 +49,34 @@ services:
       - '6002:7002'
     volumes:
       - ./comments:/app
+    networks:
+      - app-network
+
+  query:
+    build:
+      context: ./query
+      dockerfile: Dockerfile
+    container_name: query
+    ports:
+      - '6003:7002'
+    networks:
+      - app-network
+  #    volumes:
+  #      - ./query:/usr/app
+
+  eventbus:
+    build:
+      context: ./event-bus
+      dockerfile: Dockerfile
+    container_name: eventbus
+    ports:
+      - '6005:7002'
+    volumes:
+      - ./event-bus:/app
+    networks:
+      - app-network
+
+
 
   frontend:
     container_name: frontend
@@ -67,65 +97,66 @@ services:
 
 
 
-  php:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    container_name: php
-    restart: unless-stopped
-    tty: true
-    working_dir: /var/www/php
-    volumes:
-      - ./:/var/www/php
-      - ./php/additional.ini:/usr/local/etc/php/conf.d/additional.ini
-      - ./php/www.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
-    networks:
-      - app-network
+
+  #  php:
+  #    build:
+  #      context: ./
+  #      dockerfile: Dockerfile
+  #    container_name: php
+  #    restart: unless-stopped
+  #    tty: true
+  #    working_dir: /var/www/php
+  #    volumes:
+  #      - ./:/var/www/php
+  #      - ./php/additional.ini:/usr/local/etc/php/conf.d/additional.ini
+  #      - ./php/www.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+  #    networks:
+  #      - app-network
 
   ### Nginx Server Container ##################################
-  mysql:
-    image: mysql/mysql-server:latest-aarch64
-    container_name: mysql
-    tty: true
-    expose:
-      - "3306"
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: 12345678
-      MYSQL_DATABASE: laravel
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 12345678
-      MYSQL_ROOT_HOST: '%'
-      TZ: Asia/Shanghai
-    volumes:
-      - mysqldata:/var/lib/mysql
-      - ./mysql/my.cnf:/etc/mysql/my.cnf
-    restart: always
-    networks:
-      - app-network
-
-  nginx:
-    image: nginx:stable-alpine
-    container_name: nginx
-    depends_on:
-      - php
-    restart: unless-stopped
-    tty: true
-    ports:
-      - "80:80"
-      - "443:443"
-      - "8000:8000"
-      - "8080:8080"
-    environment:
-      MYSQL_ROOT_PASSWORD: 12345678
-      TZ: Asia/Shanghai
-    volumes:
-      - ./:/var/www/php
-      - ./nginx/conf.d/:/etc/nginx/conf.d/
-      - ./nginx/log:/var/log/nginx
-    networks:
-      - app-network
+#  mysql:
+#    image: mysql/mysql-server:latest-aarch64
+#    container_name: mysql
+#    tty: true
+#    expose:
+#      - "3306"
+#    ports:
+#      - "3306:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: 12345678
+#      MYSQL_DATABASE: laravel
+#      MYSQL_USER: root
+#      MYSQL_PASSWORD: 12345678
+#      MYSQL_ROOT_HOST: '%'
+#      TZ: Asia/Shanghai
+#    volumes:
+#      - mysqldata:/var/lib/mysql
+#      - ./mysql/my.cnf:/etc/mysql/my.cnf
+#    restart: always
+#    networks:
+#      - app-network
+#
+#  nginx:
+#    image: nginx:stable-alpine
+#    container_name: nginx
+#    depends_on:
+#      - php
+#    restart: unless-stopped
+#    tty: true
+#    ports:
+#      - "80:80"
+#      - "443:443"
+#      - "8000:8000"
+#      - "8080:8080"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: 12345678
+#      TZ: Asia/Shanghai
+#    volumes:
+#      - ./:/var/www/php
+#      - ./nginx/conf.d/:/etc/nginx/conf.d/
+#      - ./nginx/log:/var/log/nginx
+#    networks:
+#      - app-network
 
 
 networks:
