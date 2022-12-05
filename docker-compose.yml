@@ -61,9 +61,19 @@ services:
       - '6003:7002'
     networks:
       - app-network
-  #    volumes:
-  #      - ./query:/usr/app
-
+    volumes:
+      - ./query:/app
+  moderation:
+    build:
+      context: ./moderation
+      dockerfile: Dockerfile
+    container_name: moderation
+    ports:
+      - '6004:7002'
+    networks:
+      - app-network
+    volumes:
+      - ./moderation:/app
   eventbus:
     build:
       context: ./event-bus
