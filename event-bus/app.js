@@ -11,27 +11,31 @@ const events = [];
 app.post('/events', async (req, res) => {
     const event = req.body;
     events.push(event);
-    await axios.post('http://query:7002/events', event)
+    // let xyz = await axios.post('http://post-cluster-ip-srv:4000/events', event)
+
+    await axios.post('http://posts-clusterip-srv:4000/events', event)
         .catch((error) => {
-            console.log(events);
-        })
-    await axios.post('http://posts:7002/events', event)
-        .catch((error) => {
-            console.log(events);
+            console.log('error in post service');
         });
 
-    await axios.post('http://moderation:7002/events', event)
+    await axios.post('http://query-srv:4000/events', event)
         .catch((error) => {
-            console.log(events);
+            console.log('error in query service');
         });
-    await axios.post('http://comments:7002/events', event)
+
+    await axios.post('http://moderation-srv:4000/events', event)
         .catch((error) => {
-            console.log(events);
+            console.log('error in moderation service');
         });
-    console.log(event);
+    await axios.post('http://comments-srv:4000/events', event)
+        .catch((error) => {
+            console.log('error in comments service');
+        });
+    console.log('event service called');
+    res.status(201).send('hey');
 
 
-    res.send({status: 'ok'});
+   res.send({status: 'ok'});
 });
 
 app.get('/events', (req, res) => {

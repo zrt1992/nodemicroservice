@@ -48,7 +48,7 @@ app.post('/events', (req, res) => {
 
 app.listen('7002', async  () => {
     console.log('this is query service');
-    const res = await axios.get('http://eventbus:7002/events') ;
+    const res = await axios.get('http://event-bus-srv:4000/events') ;
     for(let event of res.data){
         console.log('Processing event:', event.type);
         handleEvent(event.type, event.data);

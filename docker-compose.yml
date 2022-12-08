@@ -33,6 +33,7 @@ services:
       context: ./posts
       dockerfile: Dockerfile
     container_name: posts
+    image: posts:k8
     ports:
       - '6001:7002'
     volumes:
