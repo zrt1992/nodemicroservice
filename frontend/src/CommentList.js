@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-export default ({comments}) => {
+const commentsList = ({comments}) => {
     const renderedComments = comments.map(comment => {
         return <li key={comment.id}>{comment.content}</li>
     })
@@ -11,3 +11,4 @@ export default ({comments}) => {
         </ul>
     );
 }
+export default commentsList;

@@ -1,12 +1,9 @@
+import React from 'react';
 
-import PostCreate from "./PostCreate";
-import PostList from "./PostList";
 const App = ()=>{
     return(
-      <div className="container">
+      <div>
           <h1>Create Post</h1>
-          <PostCreate/>
-          <PostList/>
       </div>
     );
 }

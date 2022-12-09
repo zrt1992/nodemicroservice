@@ -28,9 +28,6 @@
 // }
 
 
-
-
-
 // async function test(){
 //     try {
 //         let random = await randomReadFile(2);
@@ -40,7 +37,6 @@
 //     }
 // }
 // test();
-
 
 
 // console.log('earlier');
@@ -76,9 +72,29 @@ async function getFile() {
 }
 
 
-
-getFile();
+// getFile();
 // console.log('getting file')
+
+var countries = [
+    {
+        id: 1,
+        name: "usa"
+
+    },
+    {
+        id: 2,
+        name: "pakistan"
+    },
+    {
+        id: 2,
+        name: "france"
+    }
+
+]
+var name = countries.map(country=>{
+   return country.name;
+})
+document.write(name)
 
 
 
